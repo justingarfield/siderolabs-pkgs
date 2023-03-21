@@ -181,5 +181,10 @@ vars:
   xfsprogs_version: 5.18.0
   xfsprogs_sha256: 1e8d8801bdec8cd4cad360ce3bbd12c35a97f2bc8f7c8c9580d1903b0e8cc35b
   xfsprogs_sha512: 47d035a33367edae7357e34c70bdb0fe9219231153fb4c4f418ed1462d137dd77338c12a199eb71cd70e88903e5fc11e1e4fb595c622183786e87346e2f65739
+
+  # renovate: datasource=github-releases versioning=loose depName=pftf/RPi4
+  raspberrypi_4_uefi_firmware_version: 1.34
+  raspberrypi_4_uefi_firmware_sha256: ff4f5ce208f49f50e38e9517430678f3b6a10327d3fd5ce4ce434f74d08d5b76
+  raspberrypi_4_uefi_firmware_sha512: f095d6419066e9042f71716865ea495991a4cc4d149ecb514348f397ae2c617de481aead6e507b7dcec018864c6f941b020903c167984accf25bf261010385f7
 labels:
   org.opencontainers.image.source: https://github.com/siderolabs/pkgs

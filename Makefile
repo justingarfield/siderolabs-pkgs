@@ -66,7 +66,8 @@ TARGETS = \
 	syslinux \
 	u-boot \
 	util-linux \
-	xfsprogs
+	xfsprogs \
+	raspberrypi4-uefi
 
 # Temporarily disabled until mellanox builds with Linux 6.1
 # mellanox-ofed-pkg \

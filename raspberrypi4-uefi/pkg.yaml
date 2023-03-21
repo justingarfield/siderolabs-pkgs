@@ -3,16 +3,16 @@ variant: alpine
 install:
   - unzip
 steps:
-# {{ if eq .ARCH "aarch64" }} This in fact is YAML comment, but Go templating instruction is evaluated by bldr restricting build to arm64 only
+# {{ if eq .ARCH "aarch64" }}
   - sources:
-      - url: https://github.com/pftf/RPi4/releases/download/v1.34/RPi4_UEFI_Firmware_v1.34.zip
-        destination: RPi4_UEFI_Firmware.zip
-        sha256: ff4f5ce208f49f50e38e9517430678f3b6a10327d3fd5ce4ce434f74d08d5b76
-        sha512: f095d6419066e9042f71716865ea495991a4cc4d149ecb514348f397ae2c617de481aead6e507b7dcec018864c6f941b020903c167984accf25bf261010385f7
+      - url: https://github.com/pftf/RPi4/releases/download/v{{ .raspberrypi_4_uefi_firmware_version }}/RPi4_UEFI_Firmware_v{{ .raspberrypi_4_uefi_firmware_version }}.zip
+        destination: RPi4_UEFI_Firmware_v{{ .raspberrypi_4_uefi_firmware_version }}.zip
+        sha256: "{{ .raspberrypi_4_uefi_firmware_sha256 }}"
+        sha512: "{{ .raspberrypi_4_uefi_firmware_sha512 }}"
     prepare:
       - |
-        unzip RPi4_UEFI_Firmware.zip
-        rm RPi4_UEFI_Firmware.zip
+        unzip RPi4_UEFI_Firmware_v{{ .raspberrypi_4_uefi_firmware_version }}.zip
+        rm RPi4_UEFI_Firmware_v{{ .raspberrypi_4_uefi_firmware_version }}.zip
         mkdir /rpi4
         mv ./* /rpi4
     install:
